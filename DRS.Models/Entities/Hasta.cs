@@ -10,7 +10,6 @@ namespace DRS.Models.Entities
     {
         public double Boy { get; set; }
         public double Kilo { get; set; }
-        private int myVar;
 
         private int _yas;// field. asıl ram'e çıkan bu. 
 
@@ -25,6 +24,5 @@ namespace DRS.Models.Entities
 
             //set tanımlanmadı çünkü yaş property'sine dışarıdan giriş yapılmamalı
         }
-
     }
 }

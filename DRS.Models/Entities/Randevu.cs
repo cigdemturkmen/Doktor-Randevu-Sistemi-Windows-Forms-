@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DRS.Models.Entities
 {
-    public class Randevu : Base
+    public class Randevu
     {
         public Hasta Hasta { get; set; }
         public Doktor  Doktor { get; set; }

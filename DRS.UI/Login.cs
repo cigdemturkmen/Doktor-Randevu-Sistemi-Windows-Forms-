@@ -36,8 +36,7 @@ namespace DRS.UI
 
                 //this.Close(); tüm pencereler kapanıyor. Loginde close deyince proje kapanıyor.
                 this.Hide();
-            }
-            
+            }    
         }
     }
 }
