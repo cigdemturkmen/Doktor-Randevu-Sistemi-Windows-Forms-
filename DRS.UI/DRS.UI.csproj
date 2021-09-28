@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HastaDüzenlemeEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaDüzenlemeEkrani.Designer.cs">
+      <DependentUpon>HastaDüzenlemeEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="HastaKayitEkrani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,7 @@
     <Compile Include="HastaListesi.Designer.cs">
       <DependentUpon>HastaListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FormHelpers.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,8 +79,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HastaDüzenlemeEkrani.resx">
+      <DependentUpon>HastaDüzenlemeEkrani.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HastaKayitEkrani.resx">
       <DependentUpon>HastaKayitEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaListesi.resx">
+      <DependentUpon>HastaListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
