@@ -83,31 +83,32 @@ namespace DRS.UI
 
 
             /* Hocanın yazdığı açık/kapalı-kontrolü kodu aşağıda*/
+            EkranActirma("HastaKayitEkrani", new HastaKayitEkrani());
 
-            Form hastaKayitEkrani = null;
+            //Form hastaKayitEkrani = null;
 
             // Açık olan fromlarda adı hastaKayitEkrani olan bir formu arıyoruz
-            foreach (Form item in Application.OpenForms)
-            {
-                if (item.Name == "HastaKayitEkrani")
-                {
-                    hastaKayitEkrani = item;
-                }
-            }
+            //foreach (Form item in Application.OpenForms)
+            //{
+            //    if (item.Name == "HastaKayitEkrani")
+            //    {
+            //        hastaKayitEkrani = item;
+            //    }
+            //}
 
-            // Arama sonucuna göre daha önce açılmış ise null gelmez o yüzden öne getirme işlemi yapılır
-            if (hastaKayitEkrani != null)
-            {
-                hastaKayitEkrani.BringToFront();
-            }
-            else
-            {
-                // Eğer daha önce kayıt ekranı açılmamışsa o zaman yeni instance oluşturup açarız
-                hastaKayitEkrani = new HastaKayitEkrani();
-                hastaKayitEkrani.MdiParent = this;
-                hastaKayitEkrani.WindowState = FormWindowState.Maximized;
-                hastaKayitEkrani.Show();
-            }
+            //// Arama sonucuna göre daha önce açılmış ise null gelmez o yüzden öne getirme işlemi yapılır
+            //if (hastaKayitEkrani != null)
+            //{
+            //    hastaKayitEkrani.BringToFront();
+            //}
+            //else
+            //{
+            //    // Eğer daha önce kayıt ekranı açılmamışsa o zaman yeni instance oluşturup açarız
+            //    hastaKayitEkrani = new HastaKayitEkrani();
+            //    hastaKayitEkrani.MdiParent = this;
+            //    hastaKayitEkrani.WindowState = FormWindowState.Maximized;
+            //    hastaKayitEkrani.Show();
+            //}
         }
 
 
