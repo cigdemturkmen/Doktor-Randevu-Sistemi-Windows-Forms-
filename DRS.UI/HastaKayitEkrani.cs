@@ -13,6 +13,7 @@ namespace DRS.UI
 {
     public partial class HastaKayitEkrani : Form
     {
+        List<Hasta> hastalarListesi = null;
         public HastaKayitEkrani()
         {
             InitializeComponent();
@@ -60,6 +61,9 @@ namespace DRS.UI
         // Form'un load'unda gelecek mask'ler ve ComboBox item'ları.
         private void HastaKayitEkrani_Load(object sender, EventArgs e)
         {
+
+            // var buFormunMainFormu = (MainPage)this.MdiParent; //BU constroctorda çalışmıyor. O YÜZDEN LOADDA
+            hastalarListesi = ((MainPage)this.MdiParent).hastalar;
             mtxtTelefon.Mask = "\\+\\9\\0\\(000\\) 0000000";
 
             var iller = new List<string> {"Adana","Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
@@ -85,17 +89,17 @@ namespace DRS.UI
             }
         }
 
-        
+        List<Hasta> hastalar = new List<Hasta>(); //buton her bastığında yeni instance oluşmasın diye globale aldık
         // Hasta kaydetme butonu
         private void btnHastaKaydet_Click(object sender, EventArgs e)
         {
             var hasta = new Hasta();
 
-            hasta.Ad = txtAd.Text;
+            hasta.Ad = txtAd.Text; //baştaki hastayı yazma.
             hasta.Soyad = txtSoyad.Text;
             hasta.TCKN = mtxtTCKN.Text;
             hasta.DogumTarihi = dtpDogumTarihi.Value;
-            if (rdbErkek.Checked)
+            if (rdbErkek.Checked) //ternary if'le yazılabilir.
             {
                 hasta.Cinsiyet = Models.Enums.Cinsiyet.Erkek;
             }
@@ -110,16 +114,41 @@ namespace DRS.UI
             hasta.Ilce = cmbIlceler.SelectedItem.ToString();
             hasta.Adres = txtAdres.Text;
 
-            List<Hasta> hastalar = new List<Hasta>();
 
-            hastalar.Add(hasta);
-
+            // TCKN kontrolü yap.
+            if (hastalarListesi.Exists(x => x.TCKN == hasta.TCKN))
+            {
+                hastalarListesi.Add(hasta);
+            }
+            else
+            {
+                MessageBox.Show("Bu TCKN var");
+            }
+            var sonuc = MessageBox.Show("Yeni hasta kaydı oluşturmak istiyor musunuz", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sonuc == DialogResult.Yes)
+            {
+                //temizle fonksiyonu
+            }
+            else
+            {
+                // Formu kapat
+                this.Close();
+            }
         }
+
+
+        //HastalarListesi formunda göster
+        // public HastaListesi liste = new HastaListesi();
+
 
         // Temizle butonu
         private void btnTemizle_Click(object sender, EventArgs e)
         {
-            FormuTemizle();
+            //
         }
     }
 }
+
+
+
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DRS.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace DRS.UI
 {
     public partial class MainPage : Form
     {
+        public List<Hasta> hastalar = new List<Hasta>();
         public MainPage()
         {
             InitializeComponent();
