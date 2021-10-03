@@ -19,6 +19,9 @@ namespace DRS.UI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
             //Application.Run(new MainPage());
+            //Application.Run(new HastaListesi());
+            //Application.Run(new DoktorKayitEkrani());
+            //Application.Run(new HastaKayitEkrani());
         }
     }
 }

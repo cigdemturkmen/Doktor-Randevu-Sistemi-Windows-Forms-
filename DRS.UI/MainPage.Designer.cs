@@ -45,6 +45,7 @@ namespace DRS.UI
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hastaToolStripMenuItem,
             this.doktorİşlemleriToolStripMenuItem,
@@ -52,7 +53,7 @@ namespace DRS.UI
             this.cikisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,20 +63,20 @@ namespace DRS.UI
             this.hastaKayitToolStripMenuItem,
             this.hastaListesiToolStripMenuItem});
             this.hastaToolStripMenuItem.Name = "hastaToolStripMenuItem";
-            this.hastaToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.hastaToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.hastaToolStripMenuItem.Text = "Hasta İşlemleri";
             // 
             // hastaKayitToolStripMenuItem
             // 
             this.hastaKayitToolStripMenuItem.Name = "hastaKayitToolStripMenuItem";
-            this.hastaKayitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hastaKayitToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.hastaKayitToolStripMenuItem.Text = "Hasta Kayıt";
             this.hastaKayitToolStripMenuItem.Click += new System.EventHandler(this.hastaKayitToolStripMenuItem_Click);
             // 
             // hastaListesiToolStripMenuItem
             // 
             this.hastaListesiToolStripMenuItem.Name = "hastaListesiToolStripMenuItem";
-            this.hastaListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hastaListesiToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.hastaListesiToolStripMenuItem.Text = "Hasta Listesi";
             this.hastaListesiToolStripMenuItem.Click += new System.EventHandler(this.hastaListesiToolStripMenuItem_Click);
             // 
@@ -85,20 +86,22 @@ namespace DRS.UI
             this.doktorKayitToolStripMenuItem,
             this.doktorListesiToolStripMenuItem});
             this.doktorİşlemleriToolStripMenuItem.Name = "doktorİşlemleriToolStripMenuItem";
-            this.doktorİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.doktorİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
             this.doktorİşlemleriToolStripMenuItem.Text = "Doktor İşlemleri";
             // 
             // doktorKayitToolStripMenuItem
             // 
             this.doktorKayitToolStripMenuItem.Name = "doktorKayitToolStripMenuItem";
-            this.doktorKayitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doktorKayitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.doktorKayitToolStripMenuItem.Text = "Doktor Kayıt";
+            this.doktorKayitToolStripMenuItem.Click += new System.EventHandler(this.doktorKayitToolStripMenuItem_Click);
             // 
             // doktorListesiToolStripMenuItem
             // 
             this.doktorListesiToolStripMenuItem.Name = "doktorListesiToolStripMenuItem";
-            this.doktorListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doktorListesiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.doktorListesiToolStripMenuItem.Text = "Doktor Listesi";
+            this.doktorListesiToolStripMenuItem.Click += new System.EventHandler(this.doktorListesiToolStripMenuItem_Click);
             // 
             // randevuİşlemleriToolStripMenuItem
             // 
@@ -106,36 +109,37 @@ namespace DRS.UI
             this.randevuKayitToolStripMenuItem,
             this.randevuListesiToolStripMenuItem});
             this.randevuİşlemleriToolStripMenuItem.Name = "randevuİşlemleriToolStripMenuItem";
-            this.randevuİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.randevuİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.randevuİşlemleriToolStripMenuItem.Text = "Randevu İşlemleri";
             // 
             // randevuKayitToolStripMenuItem
             // 
             this.randevuKayitToolStripMenuItem.Name = "randevuKayitToolStripMenuItem";
-            this.randevuKayitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.randevuKayitToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.randevuKayitToolStripMenuItem.Text = "Randevu Kayıt";
             // 
             // randevuListesiToolStripMenuItem
             // 
             this.randevuListesiToolStripMenuItem.Name = "randevuListesiToolStripMenuItem";
-            this.randevuListesiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.randevuListesiToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.randevuListesiToolStripMenuItem.Text = "Randevu Listesi";
             // 
             // cikisToolStripMenuItem
             // 
             this.cikisToolStripMenuItem.Name = "cikisToolStripMenuItem";
-            this.cikisToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.cikisToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.cikisToolStripMenuItem.Text = "Çıkış";
             this.cikisToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainPage";
             this.Text = "MainPage";
             this.menuStrip1.ResumeLayout(false);

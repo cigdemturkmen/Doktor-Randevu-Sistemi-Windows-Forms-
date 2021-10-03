@@ -1,4 +1,5 @@
 ﻿using DRS.Models.Entities;
+using DRS.UI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,58 +15,24 @@ namespace DRS.UI
     public partial class MainPage : Form
     {
         public List<Hasta> hastalar = new List<Hasta>();
+        public List<Doktor> doktorlar = new List<Doktor>();
+
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //MenuStrip'te Çıkış seçeneğine tıklandığında uygulamayı kapat. Burada MessageBox'ın başka bir overload'ını kullandık.
-
-            DialogResult cevap = MessageBox.Show("Uygulamayı kapatmak istediğinizden emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
-            if (cevap == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        // Ekran açık/kapalı kontrolü için metot. (Malesef çağıramıyorum)  :(
-        public void EkranActirma(string formName, Form x)
-        {
-            Form hastakayitekrani = null;
-
-            foreach (Form item in Application.OpenForms)
-            {
-                if (item.Name == formName)
-                {
-                    hastakayitekrani = item;
-                }
-            }
-
-            if (hastakayitekrani != null)
-            {
-                hastakayitekrani.BringToFront();
-            }
-            else
-            {
-                x.MdiParent = this;
-                x.WindowState = FormWindowState.Maximized;
-                x.Show();
-            }
-        }
-
-
+        // Hasta Kayıt ekranını açar.
         private void hastaKayitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MenuStrip'te Hasta Kayıt'a tıklandığında hasta kayıt formunu açtıracak.
-
-            //Eğer mevcutta açık olan bir hasta kayıt ekranı varsa ön plana getir. Yoksa yeni instance oluştur. Bu kontrolü, tekrar tekrar aynı form açılmasın diye yapacağız(birden fazla instance oluşmasın diye)
+            // MenuStrip'te Hasta Kayıt'a tıklandığında hasta kayıt formunu açtıracak.
+            // Eğer mevcutta açık olan bir hasta kayıt ekranı varsa ön plana getir. Yoksa yeni instance oluştur. Bu kontrolü, tekrar tekrar aynı form açılmasın diye yapacağız(birden fazla instance oluşmasın diye)
             // Application.OpenForms -> açık olan formları temsil eder.
 
+            FormHelpers.EkranActirma("HastaKayitEkrani", new HastaKayitEkrani());
 
 
-
+            #region MyAltCode
             //foreach (Form item in Application.OpenForms) // break koyunca neden çalışmıyor?
             //{
             //    if (item.Name == "HastaKayitEkrani")
@@ -85,7 +52,6 @@ namespace DRS.UI
 
 
             /* Hocanın yazdığı açık/kapalı-kontrolü kodu aşağıda*/
-            EkranActirma("HastaKayitEkrani", new HastaKayitEkrani());
 
             //Form hastaKayitEkrani = null;
 
@@ -110,36 +76,62 @@ namespace DRS.UI
             //    hastaKayitEkrani.MdiParent = this;
             //    hastaKayitEkrani.WindowState = FormWindowState.Maximized;
             //    hastaKayitEkrani.Show();
-            //}
+            //} 
+            #endregion
         }
 
-
+        // Hasta Listesi ekranını açar.
         private void hastaListesiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Hasta listesi ekranı açtıracak
-            Form hastaListesi = null;
+            FormHelpers.EkranActirma("HastaListesi", new HastaListesi());
 
-            foreach (Form item in Application.OpenForms)
-            {
-                if (item.Text == "HastaListesi")
-                {
-                    hastaListesi = item;
-                }
-            }
 
-            if (hastaListesi != null)
-            {
-                hastaListesi.BringToFront();
-            }
-            else
-            {
-                // Eğer daha önce kayıt ekranı açılmışsa o zaman yeni instance oluşturup açarız
-                hastaListesi = new HastaListesi();
-                hastaListesi.MdiParent = this;
-                hastaListesi.WindowState = FormWindowState.Maximized;
-                hastaListesi.Show();
-            }
+            #region MyAltCode
+            //Form hastaListesi = null;
 
+            //foreach (Form item in Application.OpenForms)
+            //{
+            //    if (item.Text == "HastaListesi")
+            //    {
+            //        hastaListesi = item;
+            //    }
+            //}
+
+            //if (hastaListesi != null)
+            //{
+            //    hastaListesi.BringToFront();
+            //}
+            //else
+            //{
+            //    // Eğer daha önce kayıt ekranı açılmışsa o zaman yeni instance oluşturup açarız
+            //    hastaListesi = new HastaListesi();
+            //    hastaListesi.MdiParent = this;
+            //    hastaListesi.WindowState = FormWindowState.Maximized;
+            //    hastaListesi.Show();
+            //}
+            #endregion
+        }
+
+        // Doktor Kayıt ekranını açar.
+        private void doktorKayitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelpers.EkranActirma("DoktorKayitEkrani", new DoktorKayitEkrani());
+        }
+
+        // Doktor listesi ekranını açar.
+        private void doktorListesiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHelpers.EkranActirma("DoktorListesi", new DoktorListesi());
+        }
+
+        // Uygulamadan Çıkış
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult cevap = MessageBox.Show("Uygulamayı kapatmak istediğinizden emin misiniz?", "Uyarı", MessageBoxButtons.YesNo);
+            if (cevap == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace DRS.UI
 {
-    partial class HastaListesi
+    partial class DoktorListesi
     {
         /// <summary>
         /// Required designer variable.
@@ -30,56 +30,54 @@ namespace DRS.UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvwDoktorlar = new System.Windows.Forms.ListView();
             this.lviTCKN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviAd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lviCinsiyet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviDogumTarihi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lviBoy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lviKilo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lviCinsiyet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lviBrans = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lviMezunOlduguOkul = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lviUnvan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviTelefon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lviIl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lviIller = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviIlce = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lviAdres = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.düzenleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnYenile = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // lvwDoktorlar
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwDoktorlar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.lviTCKN,
             this.lviAd,
             this.lviSoyad,
-            this.lviCinsiyet,
             this.lviDogumTarihi,
-            this.lviBoy,
-            this.lviKilo,
+            this.lviCinsiyet,
+            this.lviBrans,
+            this.lviMezunOlduguOkul,
+            this.lviUnvan,
             this.lviTelefon,
-            this.lviIl,
+            this.lviIller,
             this.lviIlce,
             this.lviAdres});
-            this.listView1.ContextMenuStrip = this.contextMenuStrip2;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(877, 483);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvwDoktorlar.FullRowSelect = true;
+            this.lvwDoktorlar.GridLines = true;
+            this.lvwDoktorlar.HideSelection = false;
+            this.lvwDoktorlar.Location = new System.Drawing.Point(0, 0);
+            this.lvwDoktorlar.Name = "lvwDoktorlar";
+            this.lvwDoktorlar.Size = new System.Drawing.Size(796, 409);
+            this.lvwDoktorlar.TabIndex = 0;
+            this.lvwDoktorlar.UseCompatibleStateImageBehavior = false;
+            this.lvwDoktorlar.View = System.Windows.Forms.View.Details;
             // 
             // lviTCKN
             // 
             this.lviTCKN.Text = "TC Kimlik Numarası";
-            this.lviTCKN.Width = 172;
             // 
             // lviAd
             // 
@@ -89,29 +87,35 @@ namespace DRS.UI
             // 
             this.lviSoyad.Text = "Soyad";
             // 
-            // lviCinsiyet
-            // 
-            this.lviCinsiyet.Text = "Cinsiyet";
-            // 
             // lviDogumTarihi
             // 
+            this.lviDogumTarihi.DisplayIndex = 4;
             this.lviDogumTarihi.Text = "Doğum Tarihi";
             // 
-            // lviBoy
+            // lviCinsiyet
             // 
-            this.lviBoy.Text = "Boy";
+            this.lviCinsiyet.DisplayIndex = 3;
+            this.lviCinsiyet.Text = "Cinsiyet";
             // 
-            // lviKilo
+            // lviBrans
             // 
-            this.lviKilo.Text = "Kilo";
+            this.lviBrans.Text = "Brans";
+            // 
+            // lviMezunOlduguOkul
+            // 
+            this.lviMezunOlduguOkul.Text = "Mezuniyet";
+            // 
+            // lviUnvan
+            // 
+            this.lviUnvan.Text = "Unvan";
             // 
             // lviTelefon
             // 
             this.lviTelefon.Text = "Telefon";
             // 
-            // lviIl
+            // lviIller
             // 
-            this.lviIl.Text = "İl";
+            this.lviIller.Text = "Şehir";
             // 
             // lviIlce
             // 
@@ -121,14 +125,14 @@ namespace DRS.UI
             // 
             this.lviAdres.Text = "Adres";
             // 
-            // contextMenuStrip2
+            // contextMenuStrip1
             // 
-            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.düzenleToolStripMenuItem,
             this.silToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(133, 52);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 52);
             // 
             // düzenleToolStripMenuItem
             // 
@@ -146,55 +150,46 @@ namespace DRS.UI
             // 
             // btnYenile
             // 
-            this.btnYenile.Location = new System.Drawing.Point(777, 500);
-            this.btnYenile.Margin = new System.Windows.Forms.Padding(4);
+            this.btnYenile.Location = new System.Drawing.Point(689, 415);
             this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(100, 28);
-            this.btnYenile.TabIndex = 1;
+            this.btnYenile.Size = new System.Drawing.Size(107, 31);
+            this.btnYenile.TabIndex = 2;
             this.btnYenile.Text = "Yenile";
             this.btnYenile.UseVisualStyleBackColor = true;
             this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // HastaListesi
+            // DoktorListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 541);
+            this.ClientSize = new System.Drawing.Size(813, 490);
             this.Controls.Add(this.btnYenile);
-            this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "HastaListesi";
-            this.Text = "HastaListesi";
-            this.Load += new System.EventHandler(this.HastaListesi_Load);
-            this.contextMenuStrip2.ResumeLayout(false);
+            this.Controls.Add(this.lvwDoktorlar);
+            this.Name = "DoktorListesi";
+            this.Text = "DoktorListesi";
+            this.Load += new System.EventHandler(this.DoktorListesi_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader lviTCKN;
         private System.Windows.Forms.ColumnHeader lviAd;
         private System.Windows.Forms.ColumnHeader lviSoyad;
         private System.Windows.Forms.ColumnHeader lviCinsiyet;
         private System.Windows.Forms.ColumnHeader lviDogumTarihi;
-        private System.Windows.Forms.ColumnHeader lviBoy;
-        private System.Windows.Forms.ColumnHeader lviKilo;
+        private System.Windows.Forms.ColumnHeader lviBrans;
+        private System.Windows.Forms.ColumnHeader lviMezunOlduguOkul;
+        private System.Windows.Forms.ColumnHeader lviUnvan;
         private System.Windows.Forms.ColumnHeader lviTelefon;
-        private System.Windows.Forms.ColumnHeader lviIl;
+        private System.Windows.Forms.ColumnHeader lviIller;
         private System.Windows.Forms.ColumnHeader lviIlce;
         private System.Windows.Forms.ColumnHeader lviAdres;
-        private System.Windows.Forms.Button btnYenile;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem düzenleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.ListView lvwDoktorlar;
+        public System.Windows.Forms.Button btnYenile;
     }
 }
